@@ -12,18 +12,19 @@ public class SimplePlayerController : MonoBehaviour
     public float lookSpeed = 2.0f;
     public float lookXLimit = 60.0f;
     public float gravity = 150.0f;
+    public float rotationThreshold = 0.1f;  // Umbral para la zona muerta
 
     private CharacterController characterController;
+    private Animator characterAnimator;
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
     private bool canMove = true;
 
     void Start()
     {
-        // Obtener el componente CharacterController
         characterController = GetComponent<CharacterController>();
+        characterAnimator = GetComponent<Animator>();  // Asignar el componente Animator
 
-        // Bloquear el cursor y hacerlo invisible
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -54,6 +55,7 @@ public class SimplePlayerController : MonoBehaviour
         // Mover al personaje
         characterController.Move(moveDirection * Time.deltaTime);
 
+
         if (canMove)
         {
             // Obtener la entrada del mouse para la rotación en el eje Y
@@ -68,5 +70,66 @@ public class SimplePlayerController : MonoBehaviour
             // Rotar el personaje en el eje Y
             transform.Rotate(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
+
+        // Obtener la entrada del teclado para moverse hacia atrás (tecla S o flecha hacia abajo)
+        bool isMovingBackward = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
+
+        // Obtener la entrada del ratón para rotar hacia la izquierda
+        bool isRotatingLeft = Input.GetAxis("Mouse X") < -rotationThreshold;
+
+        // Obtener la entrada del ratón para rotar hacia la derecha
+        bool isRotatingRight = Input.GetAxis("Mouse X") > rotationThreshold;
+
+        // Obtener la entrada del teclado para moverse hacia adelante (tecla W o flecha hacia arriba)
+        bool isWalking = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
+
+        // Activar la animación Backward si se está moviendo hacia atrás
+        if (isMovingBackward && !isRotatingLeft && !isRotatingRight)
+        {
+            // Activar la animación Backward en el Animator
+            characterAnimator.SetBool("Backward", true);
+        }
+        else
+        {
+            // Desactivar la animación Backward si no se está moviendo hacia atrás
+            characterAnimator.SetBool("Backward", false);
+        }
+
+        // Activar la animación Left si se está rotando hacia la izquierda
+        if (isRotatingLeft)
+        {
+            // Activar la animación Left en el Animator
+            characterAnimator.SetBool("Left", true);
+        }
+        else
+        {
+            // Desactivar la animación Left si no se está rotando hacia la izquierda
+            characterAnimator.SetBool("Left", false);
+        }
+
+        // Activar la animación Right si se está rotando hacia la derecha
+        if (isRotatingRight)
+        {
+            // Activar la animación Right en el Animator
+            characterAnimator.SetBool("Right", true);
+        }
+        else
+        {
+            // Desactivar la animación Right si no se está rotando hacia la derecha
+            characterAnimator.SetBool("Right", false);
+        }
+
+        // Activar la animación Walk si se está moviendo hacia adelante
+        if (isWalking)
+        {
+            // Activar la animación Walk en el Animator
+            characterAnimator.SetBool("Walk", true);
+        }
+        else
+        {
+            // Desactivar la animación Walk si no se está moviendo hacia adelante
+            characterAnimator.SetBool("Walk", false);
+        }
+
     }
 }

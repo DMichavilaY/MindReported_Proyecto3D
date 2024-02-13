@@ -2,42 +2,103 @@ using UnityEngine;
 
 public class MonsterController : MonoBehaviour
 {
-    public Transform player; // Asigna el objeto del jugador en el Inspector
-    public float detectionRange = 10f;
-    public float minDetectionDistance = 2f; // Distancia mínima para detenerse
-    public float speed = 3f;
+    public float moveSpeed = 3f;
+    public float rotateSpeed = 120f; // Velocidad de rotación
+    public float idleTimeMin = 2f; // Tiempo mínimo en segundos para estar quieto
+    public float idleTimeMax = 5f; // Tiempo máximo en segundos para estar quieto
     public Animator monsterAnimator; // Asigna el componente Animator en el Inspector
+
+    private float idleTimer; // Temporizador para estar quieto
+    private bool isWalking; // Variable para rastrear si el monstruo está caminando
+
+    void Start()
+    {
+        // Inicializa el temporizador
+        ResetIdleTimer();
+    }
 
     void Update()
     {
-        // Calcula la distancia entre el monstruo y el jugador
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        // Si el jugador está dentro del rango de visión
-        if (distanceToPlayer <= detectionRange)
+        // Si el monstruo no está caminando, decrementa el temporizador y decide caminar si llega a cero
+        if (!isWalking)
         {
-            // Si la distancia es mayor que la distancia mínima de detección
-            if (distanceToPlayer > minDetectionDistance)
-            {
-                // Orienta al monstruo hacia el jugador
-                transform.LookAt(player);
+            idleTimer -= Time.deltaTime;
 
-                // Activa la animación de caminar (Walk)
-                monsterAnimator.SetBool("Walk", true);
-
-                // Mueve al monstruo hacia el jugador
-                transform.Translate(Vector3.forward * speed * Time.deltaTime);
-            }
-            else
+            if (idleTimer <= 0f)
             {
-                // Si la distancia es menor que la distancia mínima, detiene al monstruo
-                monsterAnimator.SetBool("Walk", false);
+                DecideToWalk();
             }
         }
         else
         {
-            // Si el jugador está fuera del rango, detiene al monstruo
+            // Si el monstruo está caminando, mueve y rota el monstruo en una dirección aleatoria
+            MoveAndRotateRandomly();
+
+            // Decrementa el temporizador de caminar y decide quedarse quieto si llega a cero
+            idleTimer -= Time.deltaTime;
+
+            if (idleTimer <= 0f)
+            {
+                DecideToIdle();
+            }
+        }
+    }
+
+    void DecideToWalk()
+    {
+        // Decide aleatoriamente si el monstruo debe caminar
+        isWalking = Random.Range(0f, 1f) > 0.5f;
+
+        if (isWalking)
+        {
+            // Inicializa el temporizador de caminar
+            ResetIdleTimer();
+
+            // Activa la animación de caminar (Walk)
+            monsterAnimator.SetBool("Walk", true);
+        }
+        else
+        {
+            // Inicializa el temporizador de estar quieto (Idle)
+            ResetIdleTimer();
+        }
+    }
+
+    void DecideToIdle()
+    {
+        // Decide aleatoriamente si el monstruo debe estar quieto
+        isWalking = Random.Range(0f, 1f) > 0.5f;
+
+        if (!isWalking)
+        {
+            // Inicializa el temporizador de estar quieto (Idle)
+            ResetIdleTimer();
+
+            // Desactiva la animación de caminar (Walk)
             monsterAnimator.SetBool("Walk", false);
         }
+        else
+        {
+            // Inicializa el temporizador de caminar
+            ResetIdleTimer();
+
+            // Activa la animación de caminar (Walk)
+            monsterAnimator.SetBool("Walk", true);
+        }
+    }
+
+    void MoveAndRotateRandomly()
+    {
+        // Mueve al monstruo en una dirección aleatoria
+        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+
+        // Rota el monstruo en una dirección aleatoria
+        transform.Rotate(Vector3.up, rotateSpeed * Time.deltaTime);
+    }
+
+    void ResetIdleTimer()
+    {
+        // Reinicia el temporizador de estar quieto (Idle) con un tiempo aleatorio
+        idleTimer = Random.Range(idleTimeMin, idleTimeMax);
     }
 }

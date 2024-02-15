@@ -8,10 +8,12 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private float distance = 2f;
     [SerializeField] private LayerMask mask;
-    private InteractivePlayerUI playerUI;
+    [SerializeField] private InteractivePlayerUI playerUI;
 
     void Update()
     {
+        //playerUI.UpdateText(string.Empty);
+
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * distance);
         RaycastHit hitInfo;
@@ -25,7 +27,7 @@ public class PlayerInteract : MonoBehaviour
 
             if (hitInfo.collider.GetComponent<InteractableObject>() != null && hitInfo.collider.tag == "Light")
             {
-                playerUI.UpdateText(hitInfo.collider.GetComponent<InteractableObject>().promptMessage);
+                playerUI.UpdateText("Aprieta la E");
             }
         }
     }

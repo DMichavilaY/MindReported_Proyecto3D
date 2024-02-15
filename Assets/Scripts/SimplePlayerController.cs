@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class SimplePlayerController : MonoBehaviour
 {
     public Camera playerCamera;
@@ -20,6 +19,11 @@ public class SimplePlayerController : MonoBehaviour
     private bool canMove = true;
 
     void Start()
+    {
+        Invoke("ActivateControls", 13.0f);
+    }
+
+    void ActivateControls()
     {
         characterController = GetComponent<CharacterController>();
         characterAnimator = GetComponent<Animator>();  // Asignar el componente Animator

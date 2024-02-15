@@ -19,9 +19,12 @@ public class SimplePlayerController : MonoBehaviour
     private bool controlsActivated = false;
     private bool canMove = true;  // Declarar la variable canMove aquí
 
+    [SerializeField] private GameObject flashlight;
+
     void Awake()
     {
         Invoke("ActivateControls", 13.0f);
+        flashlight.SetActive(false);
     }
 
     void ActivateControls()
@@ -37,6 +40,18 @@ public class SimplePlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetButtonDown("Flashlight"))
+        {
+            if (flashlight.activeSelf)
+            {
+                flashlight.SetActive(false);
+            }
+            else
+            {
+                flashlight.SetActive(true);
+            }
+        }
+
         if (!controlsActivated)
         {
             return; // Salir del método si los controles no están activados

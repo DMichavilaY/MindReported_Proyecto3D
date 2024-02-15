@@ -819,10 +819,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2018741069}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: OpenLevel1
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3543,7 +3543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 264, y: 259.5}
+  m_AnchoredPosition: {x: 773, y: -415}
   m_SizeDelta: {x: 40.8, y: 42.61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1617540968
@@ -3622,7 +3622,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1753131900, guid: 8d61e91a0d179744ba903812e1358279, type: 3}
+  m_Sprite: {fileID: -933928431, guid: 274f503da7e8c834aa0583492243b271, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

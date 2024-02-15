@@ -12,13 +12,14 @@ public class SimplePlayerController : MonoBehaviour
     public float gravity = 150.0f;
     public float rotationThreshold = 0.1f;  // Umbral para la zona muerta
 
-    private CharacterController characterController;
+    public CharacterController characterController;
     private Animator characterAnimator;
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
-    private bool canMove = true;
+    private bool controlsActivated = false;
+    private bool canMove = true;  // Declarar la variable canMove aquí
 
-    void Start()
+    void Awake()
     {
         Invoke("ActivateControls", 13.0f);
     }
@@ -30,10 +31,17 @@ public class SimplePlayerController : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        controlsActivated = true;
     }
 
     void Update()
     {
+        if (!controlsActivated)
+        {
+            return; // Salir del método si los controles no están activados
+        }
+
         // Obtener las direcciones hacia adelante y hacia la derecha del personaje
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);

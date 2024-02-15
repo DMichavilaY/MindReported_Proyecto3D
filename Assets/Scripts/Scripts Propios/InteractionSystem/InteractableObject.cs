@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableObject : MonoBehaviour
+public abstract class InteractableObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public string promptMessage;
+    public void BaseInteract()
     {
-        
+        Interact();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected virtual void Interact()
     {
-        
+
     }
 }

@@ -14,7 +14,7 @@ public class Objects : InteractableObject
 
     protected override void Interact()
     {
-        animationTime = doorAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime;
+       animationTime = doorAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime;
        if (animationTime >= 1)
         {
             if (doorOpen == false)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using TMPro;
 
 public class LogicaCalidad : MonoBehaviour
@@ -10,7 +11,7 @@ public class LogicaCalidad : MonoBehaviour
 
     void Start()
     {
-        calidad = PlayerPrefs.GetInt("numeroDeCalidad", 6);
+        calidad = PlayerPrefs.GetInt("numeroDeCalidad", 3);
         dropdown.value = calidad;
         AjustarCalidad();
     }

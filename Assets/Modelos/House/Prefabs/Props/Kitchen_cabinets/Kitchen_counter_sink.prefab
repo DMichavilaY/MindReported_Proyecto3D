@@ -474,6 +474,10 @@ PrefabInstance:
       value: Kitchen_counter_door_L
       objectReference: {fileID: 0}
     - target: {fileID: 6432468171105954400, guid: 1aa689e4d2e16354e97432c7767d059a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6432468171105954400, guid: 1aa689e4d2e16354e97432c7767d059a, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -486,7 +490,7 @@ PrefabInstance:
       addedObject: {fileID: 4319824434326317625}
     - targetCorrespondingSourceObject: {fileID: 6432468171105954400, guid: 1aa689e4d2e16354e97432c7767d059a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4319824434326317624}
+      addedObject: {fileID: 322993914614820365}
   m_SourcePrefab: {fileID: 100100000, guid: 1aa689e4d2e16354e97432c7767d059a, type: 3}
 --- !u!1 &5939683348231887476 stripped
 GameObject:
@@ -514,7 +518,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4319824434326317624
+--- !u!114 &322993914614820365
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -523,12 +527,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5939683348231887476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18657d0e6be75344291752f4db22809b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6474e6bcdadf64d4da4cbeb4baa14dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectOpen: 0
-  objectOpenAdditional: 0
-  animateAdditional: {fileID: 0}
+  promptMessage: 
 --- !u!4 &6423872657273012430 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5913058171717857498, guid: 1aa689e4d2e16354e97432c7767d059a, type: 3}
@@ -545,6 +547,10 @@ PrefabInstance:
     - target: {fileID: 4766997332163307322, guid: 21bd10f6f2ed98c408100aba24b2f050, type: 3}
       propertyPath: m_Name
       value: Kitchen_counter_door_R
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766997332163307322, guid: 21bd10f6f2ed98c408100aba24b2f050, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4766997332163307322, guid: 21bd10f6f2ed98c408100aba24b2f050, type: 3}
       propertyPath: m_IsActive
@@ -603,7 +609,7 @@ PrefabInstance:
       addedObject: {fileID: 4319824435996585745}
     - targetCorrespondingSourceObject: {fileID: 4766997332163307322, guid: 21bd10f6f2ed98c408100aba24b2f050, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4319824435996585746}
+      addedObject: {fileID: 5600589964726773622}
   m_SourcePrefab: {fileID: 100100000, guid: 21bd10f6f2ed98c408100aba24b2f050, type: 3}
 --- !u!1 &5939683349849726813 stripped
 GameObject:
@@ -631,7 +637,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4319824435996585746
+--- !u!114 &5600589964726773622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -640,12 +646,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5939683349849726813}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18657d0e6be75344291752f4db22809b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6474e6bcdadf64d4da4cbeb4baa14dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectOpen: 0
-  objectOpenAdditional: 0
-  animateAdditional: {fileID: 0}
+  promptMessage: 
 --- !u!4 &6423872658842584551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5290628391574470016, guid: 21bd10f6f2ed98c408100aba24b2f050, type: 3}

@@ -78,6 +78,10 @@ PrefabInstance:
       value: Door_mesh_A_R
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 759e9ac9bcf77054bbbd57338609eb5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 759e9ac9bcf77054bbbd57338609eb5c, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -153,7 +157,7 @@ PrefabInstance:
       addedObject: {fileID: 4257227349763175680}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 759e9ac9bcf77054bbbd57338609eb5c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5585795948084541719}
+      addedObject: {fileID: 596455190766277691}
   m_SourcePrefab: {fileID: 100100000, guid: 759e9ac9bcf77054bbbd57338609eb5c, type: 3}
 --- !u!4 &506415253627235624 stripped
 Transform:
@@ -207,7 +211,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5585795948084541719
+--- !u!114 &596455190766277691
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,12 +220,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 506415253627465992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18657d0e6be75344291752f4db22809b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6474e6bcdadf64d4da4cbeb4baa14dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectOpen: 0
-  objectOpenAdditional: 0
-  animateAdditional: {fileID: 0}
+  promptMessage: 
 --- !u!1001 &8011201947543402875
 PrefabInstance:
   m_ObjectHideFlags: 0

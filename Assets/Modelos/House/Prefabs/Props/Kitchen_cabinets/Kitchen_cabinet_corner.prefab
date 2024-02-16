@@ -196,16 +196,41 @@ PrefabInstance:
       value: Kitchen_cabinet_door_A_L
       objectReference: {fileID: 0}
     - target: {fileID: 5235918483091152450, guid: c9ebd1d1f08d8504899971b91e6943f7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235918483091152450, guid: c9ebd1d1f08d8504899971b91e6943f7, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5235918483091152450, guid: c9ebd1d1f08d8504899971b91e6943f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3403996942421064471}
   m_SourcePrefab: {fileID: 100100000, guid: c9ebd1d1f08d8504899971b91e6943f7, type: 3}
 --- !u!4 &3940999417867693860 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4891587259313980664, guid: c9ebd1d1f08d8504899971b91e6943f7, type: 3}
   m_PrefabInstance: {fileID: 8454196192329001948}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4466144469576988062 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5235918483091152450, guid: c9ebd1d1f08d8504899971b91e6943f7, type: 3}
+  m_PrefabInstance: {fileID: 8454196192329001948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3403996942421064471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4466144469576988062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6474e6bcdadf64d4da4cbeb4baa14dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: 

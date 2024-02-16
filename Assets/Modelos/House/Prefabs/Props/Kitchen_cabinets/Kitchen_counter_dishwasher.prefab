@@ -254,6 +254,10 @@ PrefabInstance:
       value: Kitchen_counter_door_R
       objectReference: {fileID: 0}
     - target: {fileID: 4766997332163307322, guid: 21bd10f6f2ed98c408100aba24b2f050, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766997332163307322, guid: 21bd10f6f2ed98c408100aba24b2f050, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -310,7 +314,7 @@ PrefabInstance:
       addedObject: {fileID: 3216873973484246344}
     - targetCorrespondingSourceObject: {fileID: 4766997332163307322, guid: 21bd10f6f2ed98c408100aba24b2f050, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3216873973484246347}
+      addedObject: {fileID: 700909532632768083}
   m_SourcePrefab: {fileID: 100100000, guid: 21bd10f6f2ed98c408100aba24b2f050, type: 3}
 --- !u!1 &4988376723616883972 stripped
 GameObject:
@@ -338,7 +342,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3216873973484246347
+--- !u!114 &700909532632768083
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -347,12 +351,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4988376723616883972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18657d0e6be75344291752f4db22809b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6474e6bcdadf64d4da4cbeb4baa14dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectOpen: 0
-  objectOpenAdditional: 0
-  animateAdditional: {fileID: 0}
+  promptMessage: 
 --- !u!4 &5652464620253921214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5290628391574470016, guid: 21bd10f6f2ed98c408100aba24b2f050, type: 3}
@@ -418,13 +420,38 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8126713915451928121, guid: cecb8e01d367b964e8e8457f9c06d048, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8126713915451928121, guid: cecb8e01d367b964e8e8457f9c06d048, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8344722522851847608}
   m_SourcePrefab: {fileID: 100100000, guid: cecb8e01d367b964e8e8457f9c06d048, type: 3}
 --- !u!4 &682101419668974916 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1367307280762979221, guid: cecb8e01d367b964e8e8457f9c06d048, type: 3}
   m_PrefabInstance: {fileID: 1985780787160968913}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7730721391220752616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8126713915451928121, guid: cecb8e01d367b964e8e8457f9c06d048, type: 3}
+  m_PrefabInstance: {fileID: 1985780787160968913}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8344722522851847608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7730721391220752616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6474e6bcdadf64d4da4cbeb4baa14dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: 

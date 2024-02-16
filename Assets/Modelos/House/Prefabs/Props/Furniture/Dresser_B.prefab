@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 1045416291674851202}
   - component: {fileID: 4362570951725601632}
   - component: {fileID: 4261956226485109552}
-  - component: {fileID: 7907841234035238460}
+  - component: {fileID: 8256288579594000020}
   m_Layer: 6
   m_Name: Dresser_drawer_A
   m_TagString: Untagged
@@ -476,7 +476,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7907841234035238460
+--- !u!114 &8256288579594000020
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -485,12 +485,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6387514400410546612}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18657d0e6be75344291752f4db22809b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6474e6bcdadf64d4da4cbeb4baa14dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectOpen: 0
-  objectOpenAdditional: 0
-  animateAdditional: {fileID: 0}
+  promptMessage: 
 --- !u!1 &8204149467380180842
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +506,7 @@ GameObject:
   - component: {fileID: 4717673570261248052}
   - component: {fileID: 6132244960527563811}
   - component: {fileID: 1475547427760189236}
-  - component: {fileID: 8067845957657757650}
+  - component: {fileID: 411258007506080616}
   m_Layer: 6
   m_Name: Dresser_drawer_B
   m_TagString: Untagged
@@ -707,7 +705,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8067845957657757650
+--- !u!114 &411258007506080616
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -716,12 +714,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8204149467380180842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18657d0e6be75344291752f4db22809b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6474e6bcdadf64d4da4cbeb4baa14dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectOpen: 0
-  objectOpenAdditional: 0
-  animateAdditional: {fileID: 0}
+  promptMessage: 
 --- !u!1 &8716200269044276846
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,7 +735,7 @@ GameObject:
   - component: {fileID: 8625241171348625862}
   - component: {fileID: 6355756458492983142}
   - component: {fileID: 1085714848841157690}
-  - component: {fileID: 3783385038221426430}
+  - component: {fileID: 72575665526661251}
   m_Layer: 6
   m_Name: Dresser_drawer_C
   m_TagString: Untagged
@@ -938,7 +934,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3783385038221426430
+--- !u!114 &72575665526661251
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -947,12 +943,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8716200269044276846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18657d0e6be75344291752f4db22809b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6474e6bcdadf64d4da4cbeb4baa14dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectOpen: 0
-  objectOpenAdditional: 0
-  animateAdditional: {fileID: 0}
+  promptMessage: 
 --- !u!1 &8754153417387388282
 GameObject:
   m_ObjectHideFlags: 0

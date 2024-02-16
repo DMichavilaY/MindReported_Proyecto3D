@@ -47,8 +47,8 @@ GameObject:
   - component: {fileID: 1895796895602560667}
   - component: {fileID: 3591805518021942028}
   - component: {fileID: 4618767602898894631}
-  - component: {fileID: 3076632487801618067}
-  m_Layer: 0
+  - component: {fileID: 2927476992690930526}
+  m_Layer: 6
   m_Name: Door_mesh_sliding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3076632487801618067
+--- !u!114 &2927476992690930526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,12 +172,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 948677725769760796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18657d0e6be75344291752f4db22809b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6474e6bcdadf64d4da4cbeb4baa14dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectOpen: 0
-  objectOpenAdditional: 0
-  animateAdditional: {fileID: 0}
+  promptMessage: 
 --- !u!1 &2779560791263123015
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +218,7 @@ GameObject:
   - component: {fileID: 4086278965153044665}
   - component: {fileID: 6740203213679004931}
   - component: {fileID: 785538191962265575}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Windowglass_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,8 +335,8 @@ GameObject:
   - component: {fileID: 7017469940531689233}
   - component: {fileID: 637792081057398463}
   - component: {fileID: 5052018627018190849}
-  - component: {fileID: 7577689565927119199}
-  m_Layer: 0
+  - component: {fileID: 7257869052490744836}
+  m_Layer: 6
   m_Name: Door_mesh_sliding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +451,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7577689565927119199
+--- !u!114 &7257869052490744836
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -462,12 +460,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4589046233946957501}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18657d0e6be75344291752f4db22809b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6474e6bcdadf64d4da4cbeb4baa14dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectOpen: 0
-  objectOpenAdditional: 0
-  animateAdditional: {fileID: 0}
+  promptMessage: 
 --- !u!1 &4879747316521869412
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,7 +571,7 @@ GameObject:
   - component: {fileID: 8259825910171242694}
   - component: {fileID: 5969698204984678667}
   - component: {fileID: 607170744266456696}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Windowglass_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}

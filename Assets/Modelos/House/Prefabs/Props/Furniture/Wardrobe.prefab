@@ -343,8 +343,8 @@ GameObject:
   - component: {fileID: 4287853519067588612}
   - component: {fileID: 4186155935338171079}
   - component: {fileID: 6441868840111313460}
-  - component: {fileID: 959564777878994130}
-  m_Layer: 0
+  - component: {fileID: 1330146207159391241}
+  m_Layer: 6
   m_Name: Wardrobe_drawer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,7 +542,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &959564777878994130
+--- !u!114 &1330146207159391241
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -551,12 +551,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8141672177359358111}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18657d0e6be75344291752f4db22809b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6474e6bcdadf64d4da4cbeb4baa14dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectOpen: 0
-  objectOpenAdditional: 0
-  animateAdditional: {fileID: 0}
+  promptMessage: 
 --- !u!1001 &3648277884422391879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -624,8 +622,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2788649429530850177, guid: fdbee2a8d7a92e24887fe8f90931bcb5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6749224897436257783}
   m_SourcePrefab: {fileID: 100100000, guid: fdbee2a8d7a92e24887fe8f90931bcb5, type: 3}
+--- !u!1 &1446232215382997958 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2788649429530850177, guid: fdbee2a8d7a92e24887fe8f90931bcb5, type: 3}
+  m_PrefabInstance: {fileID: 3648277884422391879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6749224897436257783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446232215382997958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6474e6bcdadf64d4da4cbeb4baa14dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: 
 --- !u!4 &1633437552424402884 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2597006490437105539, guid: fdbee2a8d7a92e24887fe8f90931bcb5, type: 3}
@@ -698,10 +717,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2788649429530850177, guid: fdbee2a8d7a92e24887fe8f90931bcb5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3454684447745612262}
   m_SourcePrefab: {fileID: 100100000, guid: fdbee2a8d7a92e24887fe8f90931bcb5, type: 3}
 --- !u!4 &1247905973042166386 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2597006490437105539, guid: fdbee2a8d7a92e24887fe8f90931bcb5, type: 3}
   m_PrefabInstance: {fileID: 3844693620525829617}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1434499405040270960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2788649429530850177, guid: fdbee2a8d7a92e24887fe8f90931bcb5, type: 3}
+  m_PrefabInstance: {fileID: 3844693620525829617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3454684447745612262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434499405040270960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6474e6bcdadf64d4da4cbeb4baa14dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: 

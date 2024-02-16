@@ -7,6 +7,9 @@ public class Objects : InteractableObject
     private Animator Animation;
     private bool open;
     private float animationTime;
+
+    [SerializeField] private AudioSource[] openCloseSound;
+    [SerializeField] private AudioClip[] openCloseClip;
     void Awake()
     {
         Animation = GetComponent<Animator>();
@@ -19,6 +22,7 @@ public class Objects : InteractableObject
         {
             if (open == false)
             {
+                openCloseSound[0].PlayOneShot(openCloseClip[0]);
                 Animation.PlayInFixedTime("Open");
                 open = true;
 
@@ -26,6 +30,7 @@ public class Objects : InteractableObject
             else if (open == true)
             {
                 Animation.PlayInFixedTime("Close");
+                openCloseSound[1].PlayOneShot(openCloseClip[1]);
                 open = false;
             }
         }

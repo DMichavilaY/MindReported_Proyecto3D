@@ -11,22 +11,14 @@ public class SimplePlayerUse : MonoBehaviour
     private GameObject objectClicked;
     private bool flashlightActive = false;
 
-    private GameObject[] flashlights2;  // Almacena los objetos con el tag "Flashlight2"
-
-    void Start()
-    {
-        flashlights2 = GameObject.FindGameObjectsWithTag("Flashlight2");
-        SetFlashlights2Active(false);  // Desactiva los objetos con el tag "Flashlight2" al inicio
-    }
-
     void Update()
     {
-        if (Input.GetKeyDown(OpenClose)) // Open and close action
+        if (Input.GetKeyDown(OpenClose))
         {
             RaycastCheck();
         }
 
-        if (Input.GetKeyDown(Flashlight) && flashlightActive) // Toggle flashlight only if it's active
+        if (Input.GetKeyDown(Flashlight) && flashlightActive)
         {
             ToggleFlashlight();
         }
@@ -42,12 +34,15 @@ public class SimplePlayerUse : MonoBehaviour
 
             if (hitObject.CompareTag("Light"))
             {
-                hitObject.SetActive(false);  // Desactiva el objeto con el tag "Light"
-                SetFlashlights2Active(true);  // Activa objetos con el tag "Flashlight2"
+                ToggleFlashlight2();
+            }
+            else if (hitObject.CompareTag("Flashlight"))
+            {
+                ToggleFlashlight();
             }
             else if (hitObject.CompareTag("Flashlight2"))
             {
-                ToggleFlashlight2();  // Activa/Desactiva el objeto con el tag "Flashlight2"
+                ToggleFlashlight2();
             }
             else if (hitObject.GetComponent<SimpleOpenClose>())
             {
@@ -58,13 +53,13 @@ public class SimplePlayerUse : MonoBehaviour
 
     void ToggleFlashlight()
     {
-        GameObject[] flashlights = GameObject.FindGameObjectsWithTag("Light");
+        GameObject[] flashlights = GameObject.FindGameObjectsWithTag("Flashlight");
 
         if (flashlights.Length > 0)
         {
             foreach (GameObject flashlight in flashlights)
             {
-                flashlight.SetActive(!flashlight.activeSelf);  // Invierte el estado de la linterna
+                flashlight.SetActive(!flashlight.activeSelf);
             }
 
             flashlightActive = !flashlights[0].activeSelf;
@@ -73,17 +68,28 @@ public class SimplePlayerUse : MonoBehaviour
 
     void ToggleFlashlight2()
     {
-        // Esta función se encargará de manejar la lógica específica de activar/desactivar objetos con el tag "Flashlight2"
-        // Puedes personalizarla según tus necesidades.
+        GameObject[] flashlights2 = GameObject.FindGameObjectsWithTag("Flashlight2");
+
+        if (flashlights2.Length > 0)
+        {
+            foreach (GameObject flashlight2 in flashlights2)
+            {
+                flashlight2.SetActive(!flashlightActive);
+
+                MeshRenderer meshRenderer = flashlight2.GetComponent<MeshRenderer>();
+                if (meshRenderer != null)
+                {
+                    meshRenderer.enabled = !flashlightActive;
+                }
+            }
+
+            flashlightActive = !flashlights2[0].activeSelf;
+        }
     }
 
-    void SetFlashlights2Active(bool active)
+    public bool AreFlashlights2Active()
     {
-        foreach (GameObject flashlight2 in flashlights2)
-        {
-            flashlight2.SetActive(active);  // Activa o desactiva los objetos con el tag "Flashlight2"
-        }
-
-        flashlightActive = active;
+        GameObject[] flashlights2 = GameObject.FindGameObjectsWithTag("Flashlight2");
+        return flashlights2.Length > 0 && flashlights2[0].activeSelf;
     }
 }

@@ -20,6 +20,7 @@ public class SimplePlayerController : MonoBehaviour
     private bool canMove = true;  // Declarar la variable canMove aquí
 
     [SerializeField] private GameObject flashlight;
+    private bool flashlightEnabled = false;
 
     void Awake()
     {
@@ -40,16 +41,9 @@ public class SimplePlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Flashlight"))
+        if (Input.GetButtonDown("Flashlight") && flashlightEnabled)
         {
-            if (flashlight.activeSelf)
-            {
-                flashlight.SetActive(false);
-            }
-            else
-            {
-                flashlight.SetActive(true);
-            }
+            ToggleFlashlight();
         }
 
         if (!controlsActivated)
@@ -81,7 +75,6 @@ public class SimplePlayerController : MonoBehaviour
         // Mover al personaje
         characterController.Move(moveDirection * Time.deltaTime);
 
-
         if (canMove)
         {
             // Obtener la entrada del mouse para la rotación en el eje Y
@@ -96,6 +89,16 @@ public class SimplePlayerController : MonoBehaviour
             // Rotar el personaje en el eje Y
             transform.Rotate(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
+    }
 
+    void ToggleFlashlight()
+    {
+        flashlight.SetActive(!flashlight.activeSelf);
+    }
+
+    // Agregar un método público para habilitar la linterna cuando se interactúa con el objeto "Light"
+    public void EnableFlashlight()
+    {
+        flashlightEnabled = true;
     }
 }

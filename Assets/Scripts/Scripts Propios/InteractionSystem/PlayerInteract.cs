@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] private Camera cam;
     [SerializeField] private float distance = 2f;
     [SerializeField] private LayerMask mask;
+    [SerializeField] private InteractivePlayerUI playerUI;
 
     void Update()
     {
@@ -19,6 +21,11 @@ public class PlayerInteract : MonoBehaviour
             {
                 InteractableObject interactable = hitInfo.collider.GetComponent<InteractableObject>();
                 interactable.BaseInteract();
+            }
+
+            if (hitInfo.collider.GetComponent<InteractableObject>() != null && hitInfo.collider.tag == "Light")
+            {
+                playerUI.UpdateText("Aprieta la E");
             }
         }
     }

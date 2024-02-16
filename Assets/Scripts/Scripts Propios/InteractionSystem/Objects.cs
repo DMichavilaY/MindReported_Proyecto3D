@@ -4,29 +4,29 @@ using UnityEngine;
 
 public class Objects : InteractableObject
 {
-    private Animator doorAnimation;
-    private bool doorOpen = false;
+    private Animator Animation;
+    private bool open;
     private float animationTime;
     void Awake()
     {
-        doorAnimation = GetComponent<Animator>();
+        Animation = GetComponent<Animator>();
     }
 
     protected override void Interact()
     {
-        animationTime = doorAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime;
+       animationTime = Animation.GetCurrentAnimatorStateInfo(0).normalizedTime;
        if (animationTime >= 1)
         {
-            if (doorOpen == false)
+            if (open == false)
             {
-                doorAnimation.PlayInFixedTime("Open");
-                doorOpen = true;
+                Animation.PlayInFixedTime("Open");
+                open = true;
 
             }
-            else if (doorOpen == true)
+            else if (open == true)
             {
-                doorAnimation.PlayInFixedTime("Close");
-                doorOpen = false;
+                Animation.PlayInFixedTime("Close");
+                open = false;
             }
         }
 

@@ -27,7 +27,6 @@ public class SimplePlayerController : MonoBehaviour
     {
         Invoke("ActivateControls", 13.0f);
         // Desactivar la linterna al inicio
-        flashlight.SetActive(false);
     }
 
     void ActivateControls()
@@ -117,7 +116,7 @@ public class SimplePlayerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, Mathf.Infinity))
         {
-            if (hit.collider.CompareTag("Light"))
+            if (hit.collider.CompareTag("Light") && Input.GetButtonDown("Interact"))
             {
                 // Si el raycast golpea un objeto con el tag "Light", activa la linterna
                 ActivateFlashlight();

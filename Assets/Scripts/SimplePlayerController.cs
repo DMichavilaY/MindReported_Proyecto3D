@@ -12,6 +12,8 @@ public class SimplePlayerController : MonoBehaviour
     public float gravity = 150.0f;
     public float rotationThreshold = 0.1f;  // Umbral para la zona muerta
 
+    private bool canToggleFlashlight = false;  // Nueva variable para controlar la posibilidad de hacer ToggleFlashlight
+
     public CharacterController characterController;
     private Animator characterAnimator;
     private Vector3 moveDirection = Vector3.zero;
@@ -20,11 +22,11 @@ public class SimplePlayerController : MonoBehaviour
     private bool canMove = true;  // Declarar la variable canMove aquí
 
     [SerializeField] private GameObject flashlight;
-    private bool flashlightEnabled = false;
 
     void Awake()
     {
         Invoke("ActivateControls", 13.0f);
+        // Desactivar la linterna al inicio
         flashlight.SetActive(false);
     }
 
@@ -37,13 +39,19 @@ public class SimplePlayerController : MonoBehaviour
         Cursor.visible = false;
 
         controlsActivated = true;
+
+        // Activar la linterna solo si es necesario (por ejemplo, al recibir un raycast)
+        CheckLightRaycast();
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Flashlight") && flashlightEnabled)
+        if (Input.GetButtonDown("Flashlight"))
         {
-            ToggleFlashlight();
+            if (canToggleFlashlight)
+            {
+                ToggleFlashlight();
+            }
         }
 
         if (!controlsActivated)
@@ -91,14 +99,29 @@ public class SimplePlayerController : MonoBehaviour
         }
     }
 
+    // Agrega este método para activar la linterna cuando sea necesario (por ejemplo, al recibir un raycast)
+    public void ActivateFlashlight()
+    {
+        flashlight.SetActive(true);
+        // Permitir ToggleFlashlight después de activar la linterna con raycast
+        canToggleFlashlight = true;
+    }
+
     void ToggleFlashlight()
     {
         flashlight.SetActive(!flashlight.activeSelf);
     }
 
-    // Agregar un método público para habilitar la linterna cuando se interactúa con el objeto "Light"
-    public void EnableFlashlight()
+    void CheckLightRaycast()
     {
-        flashlightEnabled = true;
+        RaycastHit hit;
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, Mathf.Infinity))
+        {
+            if (hit.collider.CompareTag("Light"))
+            {
+                // Si el raycast golpea un objeto con el tag "Light", activa la linterna
+                ActivateFlashlight();
+            }
+        }
     }
 }

@@ -1147,7 +1147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   promptMessage: 
   openCloseSound:
-  - {fileID: 0}
+  - {fileID: 5320013969434965956}
   - {fileID: 3721123123779153844}
   openCloseClip:
   - {fileID: 8300000, guid: 94f7799531be55c46859ead88db23a63, type: 3}

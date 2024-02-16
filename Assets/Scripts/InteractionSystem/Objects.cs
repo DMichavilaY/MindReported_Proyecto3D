@@ -13,6 +13,8 @@ public class Objects : InteractableObject
     void Awake()
     {
         Animation = GetComponent<Animator>();
+        openCloseSound[0].playOnAwake = false;
+        openCloseSound[1].playOnAwake = false;
     }
 
     protected override void Interact()

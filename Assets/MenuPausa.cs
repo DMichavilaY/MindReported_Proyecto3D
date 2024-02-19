@@ -97,6 +97,8 @@ public class MenuPausa : MonoBehaviour
 
 
 
+
+
 //public class MenuPausa : MonoBehaviour
 //{
 //    public GameObject ObjetoMenuPausa;

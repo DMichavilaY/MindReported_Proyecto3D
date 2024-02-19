@@ -20,21 +20,21 @@ public class MenuPausa : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Pausa== false)
+            if (Pausa == false)
             {
                 ObjetoMenuPausa.SetActive(true);
-                 Pausa = true;
+                Pausa = true;
 
-                 Time.timeScale = 0;
+                Time.timeScale = 0;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
-            
 
-                 AudioSource[] sonidos = FindObjectsOfType<AudioSource>();
 
-                for (int i=0; i < sonidos.Length; i++)
+                AudioSource[] sonidos = FindObjectsOfType<AudioSource>();
+
+                for (int i = 0; i < sonidos.Length; i++)
                 {
-                sonidos[i].Pause();
+                    sonidos[i].Pause();
 
 
                 }
@@ -45,10 +45,10 @@ public class MenuPausa : MonoBehaviour
             {
                 Resumir();
             }
-           
+
         }
 
-  
+
     }
 
     public void Resumir()
@@ -56,7 +56,7 @@ public class MenuPausa : MonoBehaviour
         ObjetoMenuPausa.SetActive(false);
         MenuSalir.SetActive(false);
         Pausa = false;
-        Time.timeScale = 1; 
+        Time.timeScale = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -73,13 +73,121 @@ public class MenuPausa : MonoBehaviour
         }
     }
 
-    public void IraAlMenu (string NombreMenu )
+    public void IraAlMenu(string NombreMenu)
     {
-        SceneManager.LoadScene( NombreMenu );
-    }    
+        SceneManager.LoadScene(NombreMenu);
+    }
 
     public void SalirDelJuego()
     {
         Application.Quit();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//public class MenuPausa : MonoBehaviour
+//{
+//    public GameObject ObjetoMenuPausa;
+//    public bool Pausa = false;
+//    public AudioSource musicaMenuPausa; // Agrega una referencia al AudioSource para la música del menú de pausa
+
+//    void Start()
+//    {
+//        // Inicializa la música del menú de pausa
+//        musicaMenuPausa.Play(); // Puedes reproducir la música automáticamente al iniciar el menú de pausa
+//        musicaMenuPausa.Pause(); // Pausa la música inicialmente para que solo se reproduzca cuando se pausa el juego
+//    }
+
+//    void Update()
+//    {
+//        if (Input.GetKeyDown(KeyCode.Escape))
+//        {
+//            if (!Pausa)
+//            {
+//                ObjetoMenuPausa.SetActive(true);
+//                Pausa = true;
+
+//                Time.timeScale = 0;
+//                Cursor.visible = true;
+//                Cursor.lockState = CursorLockMode.None;
+
+//                AudioSource[] sonidos = FindObjectsOfType<AudioSource>();
+
+//                for (int i = 0; i < sonidos.Length; i++)
+//                {
+//                    sonidos[i].Pause();
+//                }
+//            }
+//            else
+//            {
+//                Resumir();
+//            }
+//        }
+//    }
+
+//    //public void Resumir()
+//    //{
+//    //    ObjetoMenuPausa.SetActive(false);
+//    //    Pausa = false;
+//    //    Time.timeScale = 1;
+//    //    Cursor.visible = false;
+//    //    Cursor.lockState = CursorLockMode.Locked;
+
+//    //    AudioSource[] sonidos = FindObjectsOfType<AudioSource>();
+
+//    //    for (int i = 0; i < sonidos.Length; i++)
+//    //    {
+//    //        // Reanudar todos los AudioSource que se pausaron durante la pausa del juego
+//    //        sonidos[i].UnPause();
+
+//    //        // Si el AudioSource es la música del menú de pausa, lo detiene solo si se sale del menú de pausa
+//    //        if (sonidos[i] == musicaMenuPausa && !Pausa)
+//    //        {
+//    //            sonidos[i].Stop();
+//    //        }
+//    //        else // Si no es la música del menú de pausa o si aún estamos en el menú de pausa, reanuda la música
+//    //        {
+//    //            sonidos[i].Play();
+//    //        }
+//    //    }
+//    //}
+
+
+//    public void Resumir()
+//    {
+//        ObjetoMenuPausa.SetActive(false);
+//        Pausa = false;
+//        Time.timeScale = 1;
+//        Cursor.visible = false;
+//        Cursor.lockState = CursorLockMode.Locked;
+
+//        AudioSource[] sonidos = FindObjectsOfType<AudioSource>();
+
+//        for (int i = 0; i < sonidos.Length; i++)
+//        {
+//            sonidos[i].Play();
+//        }
+//    }
+
+//    public void IraAlMenu(string NombreMenu)
+//    {
+//        SceneManager.LoadScene(NombreMenu);
+//    }
+
+//    public void SalirDelJuego()
+//    {
+//        Application.Quit();
+//    }
+//}

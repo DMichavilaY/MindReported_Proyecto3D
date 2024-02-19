@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SimplePlayerController : MonoBehaviour
 {
@@ -22,9 +23,12 @@ public class SimplePlayerController : MonoBehaviour
     private bool canMove = true;  // Declarar la variable canMove aquí
 
     [SerializeField] private GameObject flashlight;
+    [SerializeField] private Image crosshair;
+    
 
     void Awake()
     {
+        crosshair.enabled = false;
         Invoke("ActivateControls", 13.0f);
         // Desactivar la linterna al inicio
     }
@@ -39,6 +43,7 @@ public class SimplePlayerController : MonoBehaviour
 
         controlsActivated = true;
 
+        crosshair.enabled = true;   
         // Activar la linterna solo si es necesario (por ejemplo, al recibir un raycast)
         CheckLightRaycast();
     }

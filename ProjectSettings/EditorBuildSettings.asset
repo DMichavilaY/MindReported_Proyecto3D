@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 7d905a0f67051e948a0af7ce36e7ecce
   - enabled: 1
+    path: Assets/Scenes/ChargeScene.unity
+    guid: a1331502b011f7b428413b10a4140182
+  - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: e41f55220c9ccfb40b4b9085d21ba116
   m_configObjects: {}

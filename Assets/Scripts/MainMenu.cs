@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public AudioSource menuMusic; // Variable para el sonido del menú principal
+    [SerializeField] private AudioSource menuMusic; // Variable para el sonido del menú principal
 
     private void Start()
     {
@@ -58,10 +59,8 @@ public class MainMenu : MonoBehaviour
             menuMusic.Stop();
         }
 
-        SceneManager.LoadScene("MainScene");
+        LoadSceneManager.LoadLevel("MainScene");
     }
-
-    
 }
 
 

@@ -49,10 +49,10 @@ public class PlayerInteract : MonoBehaviour
                     canToggleFlashlight = true;
                     lightFPS.SetActive(true);
                 }
-                else if (hitObject.CompareTag("Flaslight2"))
-                {
-                    ToggleFlashlight();
-                }
+                //else if (hitObject.CompareTag("Flaslight2"))
+                //{
+                //    ToggleFlashlight();
+                //}
             }
 
 

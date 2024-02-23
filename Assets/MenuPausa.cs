@@ -6,45 +6,45 @@ using UnityEngine.SceneManagement;
 public class MenuPausa : MonoBehaviour
 
 {
-    public GameObject ObjetoMenuPausa;
-    public bool Pausa = false;
+    [SerializeField] private GameObject ObjetoMenuPausa;
+    private bool Pausa = false;
 
-    public GameObject MenuSalir;
+    [SerializeField] private GameObject MenuSalir;
 
-    void Start()
-    {
-        // Aquí puedes inicializar variables si es necesario
-    }
+    [SerializeField] private AudioSource musicAtmosphere;
+    private float timer = 0;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (timer <= 13)
         {
-            if (Pausa == false)
+            timer += Time.deltaTime;
+        }
+
+        if (Input.GetButtonDown("Cancel"))
+        {
+            if (timer >= 13)
             {
-                ObjetoMenuPausa.SetActive(true);
-                Pausa = true;
-
-                Time.timeScale = 0;
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
-
-
-                AudioSource[] sonidos = FindObjectsOfType<AudioSource>();
-
-                for (int i = 0; i < sonidos.Length; i++)
+                if (Pausa == false)
                 {
-                    sonidos[i].Pause();
+                    ObjetoMenuPausa.SetActive(true);
+                    Pausa = true;
+
+                    Time.timeScale = 0;
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+
+                    musicAtmosphere.Pause();
 
 
                 }
 
+                else if (Pausa == true)
+                {
+                    Resumir();
+                }
             }
-
-            else if (Pausa == true)
-            {
-                Resumir();
-            }
+            
 
         }
 
@@ -60,17 +60,7 @@ public class MenuPausa : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
-
-
-
-        AudioSource[] sonidos = FindObjectsOfType<AudioSource>();
-
-        for (int i = 0; i < sonidos.Length; i++)
-        {
-            sonidos[i].Play();
-
-
-        }
+        musicAtmosphere.UnPause();
     }
 
     public void IraAlMenu(string NombreMenu)

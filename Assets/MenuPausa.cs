@@ -12,33 +12,39 @@ public class MenuPausa : MonoBehaviour
     [SerializeField] private GameObject MenuSalir;
 
     [SerializeField] private AudioSource musicAtmosphere;
-    void Start()
-    {
-        // Aquí puedes inicializar variables si es necesario
-    }
+    private float timer = 0;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (timer <= 13)
         {
-            if (Pausa == false)
+            timer += Time.deltaTime;
+        }
+
+        if (Input.GetButtonDown("Cancel"))
+        {
+            if (timer >= 13)
             {
-                ObjetoMenuPausa.SetActive(true);
-                Pausa = true;
+                if (Pausa == false)
+                {
+                    ObjetoMenuPausa.SetActive(true);
+                    Pausa = true;
 
-                Time.timeScale = 0;
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                    Time.timeScale = 0;
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
 
-                musicAtmosphere.Pause();
-                
+                    musicAtmosphere.Pause();
 
+
+                }
+
+                else if (Pausa == true)
+                {
+                    Resumir();
+                }
             }
-
-            else if (Pausa == true)
-            {
-                Resumir();
-            }
+            
 
         }
 

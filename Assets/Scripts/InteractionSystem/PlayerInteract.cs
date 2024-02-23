@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -31,7 +32,6 @@ public class PlayerInteract : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo, distance, mask))
         {
-            GameObject hitObject = hitInfo.collider.gameObject;
 
             if (hitInfo.collider.GetComponent<InteractableObject>() != null) 
             {
@@ -42,11 +42,16 @@ public class PlayerInteract : MonoBehaviour
                     InteractableObject interactable = hitInfo.collider.GetComponent<InteractableObject>();
                     interactable.BaseInteract();
                 }
-                
+
+            }
+            else
+            {
+                crosshair.color = Color.white;
             }
 
             if (hitInfo.collider.tag == "Light")
             {
+                crosshair.color = Color.red;
                 playerUI.UpdateText("Aprieta la E para interactuar con tu entorno");
 
                 if (Input.GetButtonDown("Interact"))
@@ -57,14 +62,13 @@ public class PlayerInteract : MonoBehaviour
                     canToggleFlashlight = true;
                     lightFPS.SetActive(true);
                 }
-                //else if (hitObject.CompareTag("Flaslight2"))
-                //{
-                //    ToggleFlashlight();
-                //}
             }
-
-
         }
+        else
+        {
+            crosshair.color = Color.white;
+        }
+
         if (Input.GetButtonDown("Flashlight") && canToggleFlashlight)
         {
             lightFPS.SetActive(!lightFPS.activeSelf);

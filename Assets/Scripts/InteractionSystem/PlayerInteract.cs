@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private float distance = 2f;
     [SerializeField] private LayerMask mask;
     [SerializeField] private InteractivePlayerUI playerUI;
+    [SerializeField] private Image crosshair;
 
     private bool flashlightActive = false;
     private GameObject[] flashlights2;
@@ -31,10 +33,16 @@ public class PlayerInteract : MonoBehaviour
         {
             GameObject hitObject = hitInfo.collider.gameObject;
 
-            if (hitInfo.collider.GetComponent<InteractableObject>() != null && Input.GetButtonDown("Interact")) 
+            if (hitInfo.collider.GetComponent<InteractableObject>() != null) 
             {
-                InteractableObject interactable = hitInfo.collider.GetComponent<InteractableObject>();
-                interactable.BaseInteract();
+                crosshair.color = Color.red;
+
+                if (Input.GetButtonDown("Interact"))
+                {
+                    InteractableObject interactable = hitInfo.collider.GetComponent<InteractableObject>();
+                    interactable.BaseInteract();
+                }
+                
             }
 
             if (hitInfo.collider.tag == "Light")

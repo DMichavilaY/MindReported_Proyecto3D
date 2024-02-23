@@ -8,6 +8,10 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private AudioSource menuMusic; // Variable para el sonido del menú principal
 
+    private void Awake()
+    {
+        Time.timeScale = 1.0f;
+    }
     private void Start()
     {
         // Reproducir el sonido del menú principal al iniciar

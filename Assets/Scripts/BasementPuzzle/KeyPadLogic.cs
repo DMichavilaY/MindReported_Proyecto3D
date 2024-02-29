@@ -10,6 +10,10 @@ public class KeyPadLogic : MonoBehaviour
     [SerializeField] private Collider doorCollider;
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private Animator doorAnimator;
+    [SerializeField] private AudioSource button;
+    [SerializeField] private AudioSource correct;
+    [SerializeField] private AudioSource wrong;
+    [SerializeField] private AudioClip buttonClick;
 
     private string answer = "09876";
     private Collider keypadCollider;
@@ -18,6 +22,7 @@ public class KeyPadLogic : MonoBehaviour
     private void Start()
     {
         keypadCollider = GetComponent<Collider>();
+        keypadCanvas.SetActive(false);
     }
 
     public void UseKeyPad()
@@ -41,20 +46,20 @@ public class KeyPadLogic : MonoBehaviour
     public void Number(int number)
     {
         text.text += number.ToString();
-        //button.Play();
+        button.PlayOneShot(buttonClick);
     }
 
     public void Execute()
     {
         if(text.text == answer)
         {
-            //correct.Play();
+            correct.Play();
             text.text = "Correcto";
             StartCoroutine(Correct());
         }
         else
         {
-            //wrong.Play();
+            wrong.Play();
             text.text = "Incorrecto";
             StartCoroutine(DeleteText());
         }
@@ -63,7 +68,7 @@ public class KeyPadLogic : MonoBehaviour
     public void Delete()
     {
         text.text = "";
-        //button.Play();
+        button.PlayOneShot(buttonClick);
     }
     void Update()
     {

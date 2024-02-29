@@ -7,6 +7,17 @@ public class TerrorDesactivationTime : MonoBehaviour
     public GameObject objetoParaActivar;
     public AudioClip sonidoActivacion;
     public float tiempoDeVida = 5f; // Tiempo en segundos antes de que el objeto desaparezca
+    public float volumen = 1.0f; // Puedes ajustar el volumen desde el inspector
+
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.clip = sonidoActivacion;
+        audioSource.volume = volumen;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,7 +32,7 @@ public class TerrorDesactivationTime : MonoBehaviour
             // Reproducir el sonido
             if (sonidoActivacion != null)
             {
-                AudioSource.PlayClipAtPoint(sonidoActivacion, transform.position);
+                audioSource.Play();
             }
 
             // Desactivar el collider para evitar activaciones múltiples

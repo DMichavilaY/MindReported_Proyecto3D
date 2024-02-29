@@ -36,8 +36,8 @@ ModelImporter:
       name: Yelling Out
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 0
-      lastFrame: 129
+      firstFrame: 15
+      lastFrame: 75
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

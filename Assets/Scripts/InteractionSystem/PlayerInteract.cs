@@ -14,6 +14,7 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private Image crosshair;
 
     private NoteController noteController;
+    private KeyLogic keyLogic;
 
     private bool flashlightActive = false;
     private GameObject[] flashlights2;
@@ -69,6 +70,17 @@ public class PlayerInteract : MonoBehaviour
                     lightFPS.SetActive(true);
                     canToggleFlashlight = true;
                     lightFPS.SetActive(true);
+                }
+            }
+
+            //Interactuar con la llave
+            if (hitInfo.collider.GetComponent<KeyLogic>() != null)
+            {
+                keyLogic = hitInfo.collider.GetComponent<KeyLogic>();
+
+                if (Input.GetButtonDown("Interact"))
+                {
+                    keyLogic.GetKey();
                 }
             }
         }

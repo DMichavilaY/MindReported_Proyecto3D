@@ -19,15 +19,19 @@ public class DoorClosing : MonoBehaviour
     {
         if (other.CompareTag(objectTag))
         {
-            doorAnimation.PlayInFixedTime("Close");
-            doorClose.Play();
-            doorCollider.enabled = false;
             StartCoroutine(DisableAnimation());
         }
     }
 
     IEnumerator DisableAnimation()
     {
+        yield return new WaitForSeconds(2);
+
+        doorAnimation.PlayInFixedTime("Close");
+        doorClose.Play();
+        doorCollider.enabled = false;
+
+
         yield return new WaitForSeconds(2);
         gameObject.SetActive(false);
         

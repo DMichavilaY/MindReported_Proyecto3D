@@ -21,7 +21,7 @@ public class FuseBoxLogic : MonoBehaviour
 
     public void UseFuseBox()
     {
-        doorAnimator.Play("Close");
+        doorAnimator.PlayInFixedTime("Close");
         basementDoor.enabled = false;
         doorClosing.Play();
         keyPad.enabled = true;

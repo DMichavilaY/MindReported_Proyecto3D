@@ -9,6 +9,7 @@ public class KeyPadLogic : MonoBehaviour
     [SerializeField] private SimplePlayerController controller;
     [SerializeField] private Collider doorCollider;
     [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private Animator doorAnimator;
 
     private string answer = "09876";
     private Collider keypadCollider;
@@ -49,6 +50,7 @@ public class KeyPadLogic : MonoBehaviour
         {
             //correct.Play();
             text.text = "Correcto";
+            StartCoroutine(Correct());
         }
         else
         {
@@ -88,9 +90,11 @@ public class KeyPadLogic : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         DisableKeyPad();
+        doorAnimator.PlayInFixedTime("Open");
 
         yield return new WaitForSeconds(1);
 
         keypadCollider.enabled = false;
+
     }
 }

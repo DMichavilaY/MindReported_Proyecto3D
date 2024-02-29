@@ -38,7 +38,7 @@ public class KeyPadLogic : MonoBehaviour
         keypadCanvas.SetActive(false);
         controller.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
+        Cursor.visible = false;
         text.text = "";
     }
 

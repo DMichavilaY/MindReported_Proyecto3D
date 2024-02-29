@@ -13,6 +13,8 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private InteractivePlayerUI playerUI;
     [SerializeField] private Image crosshair;
 
+    private NoteController noteController;
+
     private bool flashlightActive = false;
     private GameObject[] flashlights2;
     [SerializeField] private GameObject lightFPS;
@@ -32,11 +34,21 @@ public class PlayerInteract : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo, distance, mask))
         {
+            CrosshairColor(true);
 
+            //Interactuar con notas
+            if (hitInfo.collider.GetComponent<NoteController>() != null)
+            {
+                noteController = hitInfo.collider.GetComponent<NoteController>();
+                if (Input.GetButtonDown("Interact"))
+                {
+                    noteController.ShowNote();
+                }
+            }
+
+            //Interactuar con tu entorno
             if (hitInfo.collider.GetComponent<InteractableObject>() != null) 
             {
-                crosshair.color = Color.red;
-
                 if (Input.GetButtonDown("Interact"))
                 {
                     InteractableObject interactable = hitInfo.collider.GetComponent<InteractableObject>();
@@ -44,14 +56,10 @@ public class PlayerInteract : MonoBehaviour
                 }
 
             }
-            else
-            {
-                crosshair.color = Color.white;
-            }
 
+            //Interactuar con la linterna
             if (hitInfo.collider.tag == "Light")
             {
-                crosshair.color = Color.red;
                 playerUI.UpdateText("Aprieta la E para interactuar con tu entorno");
 
                 if (Input.GetButtonDown("Interact"))
@@ -66,18 +74,14 @@ public class PlayerInteract : MonoBehaviour
         }
         else
         {
-            crosshair.color = Color.white;
+            CrosshairColor(false);
         }
+
 
         if (Input.GetButtonDown("Flashlight") && canToggleFlashlight)
         {
             lightFPS.SetActive(!lightFPS.activeSelf);
         }
-
-        //if (Input.GetButtonDown("Flashlight") && flashlightActive) // Toggle flashlight only if it's active
-        //{
-        //    ToggleFlashlight();
-        //}
     }
 
     void ToggleFlashlight()
@@ -109,5 +113,17 @@ public class PlayerInteract : MonoBehaviour
         }
 
         flashlightActive = active;
+    }
+
+    void CrosshairColor(bool on)
+    {
+        if (on)
+        {
+            crosshair.color = Color.red;
+        }
+        else
+        {
+            crosshair.color = Color.white;
+        }
     }
 }

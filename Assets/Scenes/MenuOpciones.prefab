@@ -3998,7 +3998,7 @@ MonoBehaviour:
   slider: {fileID: 5688644829968581017}
   brilloMinimo: 0
   brilloMaximo: 0.85
-  panelBrillo: {fileID: 0}
+  panelBrillo: {fileID: 6853249827263388968, guid: 1e146adfe7863164e832889fafb6a366, type: 3}
 --- !u!114 &1479819634923833503
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class TerrorDesactivation : MonoBehaviour
     public GameObject objetoParaDesactivar;
     public AudioClip sonidoDesactivacion;
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {

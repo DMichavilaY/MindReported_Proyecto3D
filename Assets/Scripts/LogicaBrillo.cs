@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LogicaBrillo : MonoBehaviour
 {
@@ -30,4 +31,6 @@ public class LogicaBrillo : MonoBehaviour
         PlayerPrefs.SetFloat("brillo", valor);
         panelBrillo.color = new Color(panelBrillo.color.r, panelBrillo.color.g, panelBrillo.color.b, slider.value);
     }
+
+ 
 }

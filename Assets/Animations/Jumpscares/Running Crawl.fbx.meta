@@ -3,27 +3,7 @@ guid: 65358c96baa030c46a5edfe279d09fb1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: zombie_body_diffuse
-    second: {fileID: 2800000, guid: 48a26d560d2b34343a5d20de3f9d23c9, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: zombie_diffuse
-    second: {fileID: 2800000, guid: 8d913143e74e19f438aacafeb84cf5d0, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: zombie_normal
-    second: {fileID: 2800000, guid: f5bfa7e193b303a48a9c748dc17e2aa6, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: zombie_specular
-    second: {fileID: 2800000, guid: 1050923ad3afccd48ab62c0641afcc84, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

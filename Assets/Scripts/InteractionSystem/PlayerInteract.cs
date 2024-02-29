@@ -95,6 +95,8 @@ public class PlayerInteract : MonoBehaviour
                     fuseBoxLogic.UseFuseBox();
                 }
             }
+
+            //Interactuar con el KeyPad
         }
         else
         {

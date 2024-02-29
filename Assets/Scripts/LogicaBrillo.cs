@@ -26,8 +26,8 @@ public class LogicaBrillo : MonoBehaviour
     // Este método se llama cuando se cambia el valor del slider
     public void ChangeSlider(float valor)
     {
-        slider.value = Mathf.Clamp(valor, brilloMinimo, brilloMaximo); // Limita el valor entre brilloMinimo y brilloMaximo
-        PlayerPrefs.SetFloat("brillo", slider.value);
+        slider.value = valor = Mathf.Clamp(valor, brilloMinimo, brilloMaximo); // Limita el valor entre brilloMinimo y brilloMaximo
+        PlayerPrefs.SetFloat("brillo", valor);
         panelBrillo.color = new Color(panelBrillo.color.r, panelBrillo.color.g, panelBrillo.color.b, slider.value);
     }
 }

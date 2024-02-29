@@ -38,7 +38,7 @@ public class MenuOpciones : MonoBehaviour
 
     private void Start()
     {
-        Time.timeScale = 0;
+        
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
 
@@ -82,5 +82,6 @@ public class MenuOpciones : MonoBehaviour
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
+
 }
 

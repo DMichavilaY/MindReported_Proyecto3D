@@ -13,6 +13,7 @@ public class NoteController : MonoBehaviour
     private void Start()
     {
         paperSound = GetComponent<AudioSource>();
+        interactiveNote.SetActive(false);
     }
     public void ShowNote()
     {

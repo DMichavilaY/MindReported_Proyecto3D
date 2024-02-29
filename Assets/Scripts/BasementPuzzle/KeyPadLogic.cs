@@ -15,7 +15,7 @@ public class KeyPadLogic : MonoBehaviour
     [SerializeField] private AudioSource wrong;
     [SerializeField] private AudioClip buttonClick;
 
-    private string answer = "09876";
+    private string answer = "73925";
     private Collider keypadCollider;
 
 

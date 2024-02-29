@@ -7,14 +7,21 @@ public class NoteController : MonoBehaviour
     [SerializeField] private SimplePlayerController controller;
     [SerializeField] private GameObject panelBackground;
     [SerializeField] private GameObject interactiveNote;
+    private AudioSource paperSound;
     private bool isOpen = false;
 
+    private void Start()
+    {
+        paperSound = GetComponent<AudioSource>();
+    }
     public void ShowNote()
     {
         interactiveNote.SetActive(true);
         controller.enabled = false;
         isOpen = true;
         panelBackground.SetActive(true);
+        paperSound.Play();
+        
     }
 
     void DisableNote()
@@ -23,6 +30,7 @@ public class NoteController : MonoBehaviour
         controller.enabled = true;
         isOpen = false;
         panelBackground.SetActive(false);
+        paperSound.Play();
     }
 
     private void Update()

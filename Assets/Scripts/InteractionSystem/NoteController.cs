@@ -37,7 +37,7 @@ public class NoteController : MonoBehaviour
     {
         if (isOpen == true) 
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetButtonDown("Exit"))
             {
                 DisableNote();
             }

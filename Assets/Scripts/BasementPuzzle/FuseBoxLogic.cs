@@ -9,12 +9,14 @@ public class FuseBoxLogic : MonoBehaviour
     [SerializeField] private Animator doorAnimator;
     [SerializeField] private AudioSource doorClosing;
     [SerializeField] private GameObject lights;
+    [SerializeField] private Collider keyPad;
 
     private Collider fuseBox;
 
     private void Start()
     {
         fuseBox = GetComponent<Collider>();
+        keyPad.enabled = false;
     }
 
     public void UseFuseBox()
@@ -22,6 +24,7 @@ public class FuseBoxLogic : MonoBehaviour
         doorAnimator.Play("Close");
         basementDoor.enabled = false;
         doorClosing.Play();
+        keyPad.enabled = true;
         StartCoroutine(DisableScript());
     }
 

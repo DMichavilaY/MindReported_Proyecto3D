@@ -16,6 +16,7 @@ public class PlayerInteract : MonoBehaviour
     private NoteController noteController;
     private KeyLogic keyLogic;
     private FuseBoxLogic fuseBoxLogic;
+    private KeyPadLogic keyPadLogic;
 
     private bool flashlightActive = false;
     private GameObject[] flashlights2;
@@ -97,6 +98,15 @@ public class PlayerInteract : MonoBehaviour
             }
 
             //Interactuar con el KeyPad
+            if(hitInfo.collider.GetComponent<KeyPadLogic>() != null)
+            {
+                keyPadLogic = hitInfo.collider.GetComponent<KeyPadLogic>();
+
+                if (Input.GetButtonDown("Interact"))
+                {
+                    keyPadLogic.UseKeyPad();
+                }
+            }
         }
         else
         {

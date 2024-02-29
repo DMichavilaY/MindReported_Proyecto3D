@@ -13,7 +13,8 @@ public class MenuPausa : MonoBehaviour
 
     [SerializeField] private AudioSource musicAtmosphere;
     private float timer = 0;
-
+    [SerializeField] private SimplePlayerController controller;
+    [SerializeField] private PlayerInteract interactive;
     void Update()
     {
         if (timer <= 13)
@@ -30,6 +31,8 @@ public class MenuPausa : MonoBehaviour
                     ObjetoMenuPausa.SetActive(true);
                     Pausa = true;
 
+                    controller.enabled = false;
+                    interactive.enabled = false;
                     Time.timeScale = 0;
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.None;
@@ -61,6 +64,8 @@ public class MenuPausa : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         musicAtmosphere.UnPause();
+        controller.enabled = true;
+        interactive.enabled = true;
     }
 
     public void IraAlMenu(string NombreMenu)

@@ -476,9 +476,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "En la oscuridad de su hogar, Michael siente un cambio. Susurros, sombras,
+  m_text: En la oscuridad de su hogar, Michael siente un cambio. Susurros, sombras,
     y pensamientos se entrelazan y alteran su realidad. Explorando su casa, ignora
-    que cada puerta lo sumerge m\xE1s hacia lo desconocido."
+    que cada puerta lo sumerge mas hacia lo desconocido.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 21e65d901df913344be51a52600645fc, type: 2}
   m_sharedMaterial: {fileID: -3305631881501257872, guid: 21e65d901df913344be51a52600645fc, type: 2}

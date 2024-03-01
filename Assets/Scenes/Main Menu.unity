@@ -1324,7 +1324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6964188757236342960, guid: a2adfe60839f1a446af6e9f075d1aa61, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7992126284767032501, guid: a2adfe60839f1a446af6e9f075d1aa61, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1414,6 +1414,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9023955487395649511, guid: a2adfe60839f1a446af6e9f075d1aa61, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 931cdf1c5aca5a04d922b2fbc9e27ff5, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

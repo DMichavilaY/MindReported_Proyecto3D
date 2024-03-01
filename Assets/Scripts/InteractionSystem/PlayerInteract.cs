@@ -171,7 +171,7 @@ public class PlayerInteract : MonoBehaviour
         }
         else
         {
-            crosshair.color = Color.white;
+            crosshair.color = Color.grey;
         }
     }
 }

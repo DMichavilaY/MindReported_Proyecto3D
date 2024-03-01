@@ -24,6 +24,7 @@ public class SimplePlayerController : MonoBehaviour
 
     [SerializeField] private GameObject flashlight;
     [SerializeField] private Image crosshair;
+
     
 
     void Awake()

@@ -13,6 +13,9 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private InteractivePlayerUI playerUI;
     [SerializeField] private Image crosshair;
 
+    [SerializeField] private AudioSource flashlightSound;
+    [SerializeField] private AudioClip flashlightClip;
+
     private NoteController noteController;
     private KeyLogic keyLogic;
     private FuseBoxLogic fuseBoxLogic;
@@ -117,6 +120,15 @@ public class PlayerInteract : MonoBehaviour
         if (Input.GetButtonDown("Flashlight") && canToggleFlashlight)
         {
             lightFPS.SetActive(!lightFPS.activeSelf);
+        }
+
+
+        if(flashlightActive == true) 
+        {
+            if (Input.GetButtonDown("Flashlight"))
+            {
+                flashlightSound.PlayOneShot(flashlightClip);
+            }
         }
     }
 

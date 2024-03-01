@@ -14,6 +14,7 @@ public class KeyPadLogic : MonoBehaviour
     [SerializeField] private AudioSource correct;
     [SerializeField] private AudioSource wrong;
     [SerializeField] private AudioClip buttonClick;
+    [SerializeField] private AudioSource doorOpen;
 
     private string answer = "73925";
     private Collider keypadCollider;
@@ -96,6 +97,7 @@ public class KeyPadLogic : MonoBehaviour
 
         DisableKeyPad();
         doorAnimator.PlayInFixedTime("Open");
+        doorOpen.Play();
 
         yield return new WaitForSeconds(1);
 
